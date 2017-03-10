@@ -4,6 +4,27 @@
 
 ### String
 
+**index**
+```python
+s = 'github.com/guoliang-dev'
+s.index('g')  # 0 - firs index from left
+s.rindex('g')  # 18 - firt index from right
+s.index('g', s.index('g') + 1)  # 11 second index from left
+
+# contains? 
+try:
+    s.index('python')
+except ValueError as e:
+    print 'cannot find the value: %s' % e
+```
+
+**adjust**
+```python
+s='github'
+s.ljust(20, '-')  # 'github--------------'
+s.rjust(20, '-')  # '--------------github'
+```
+
 ### I/O
 
 ### Datetime

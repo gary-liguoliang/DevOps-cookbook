@@ -33,6 +33,17 @@ s.rjust(20, '-')  # '--------------github'
 
 ## Windows CMD
 
+### Windows OS quick setup
+
+**auto start**
+add app shortcut to: 
+```
+# auto start for all users
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+# auto start for one user
+C:\Users\<user-id>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup  #shorcut: shell:startup
+```
+
 ### I/O
 
 **robocopy**

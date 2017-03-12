@@ -92,7 +92,17 @@ net stop <service>
 
 ## Bash
 
+### Linux 
+```bash
+# show user's groups
+groups <user-name>
 
+# add user to group
+sudo usermod -a -G <group-name> <user-name>
+
+# log off
+logoff
+```
 
 ## Vim
 

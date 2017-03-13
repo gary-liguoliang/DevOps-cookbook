@@ -25,6 +25,13 @@ s.ljust(20, '-')  # 'github--------------'
 s.rjust(20, '-')  # '--------------github'
 ```
 
+**cout occurrences**
+```python
+s = 'cookbook'
+s.count('o') # 4
+s.count('o', 0, 2) # 1
+```
+
 ### I/O
 
 ### Datetime
@@ -105,4 +112,30 @@ logoff
 ```
 
 ## Vim
+
+## Regular Expression
+
+**Python**
+
+```python
+s = 'SB20170313AWS123456'
+m = re.search('SB\\d{6,8}([a-zA-Z]{3,6})\\d{6}', s)
+print m.group(1)
+```
+**JavaScript**
+```javascript
+s = 'SB20170313AWS123456'
+mc = s.match('SB\\d{6,8}([a-zA-Z]{3,6})\\d{6}')
+console.log(mc[1])
+```
+
+## IDE
+
+### IntelliJ 
+
+**open file in Explorer:** `ctrl + alt + F12`
+
+**recent files popup** `ctrl + e`
+
+**Maximize editor:** `ctrl + shift + F12`
 

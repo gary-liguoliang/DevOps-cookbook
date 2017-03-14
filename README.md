@@ -34,6 +34,34 @@ s.count('o', 0, 2) # 1
 
 ### I/O
 
+**get immediate sub folders**
+
+```python
+def get_immediate_subdirectories(root):
+    return [d for d in os.listdir(root)
+            if os.path.isdir(os.path.join(d, name))]
+```
+
+**get human readable file size**
+
+```python
+# http://stackoverflow.com/questions/1094841/reusable-library-to-get-human-readable-version-of-file-size
+def sizeof_fmt(num, suffix='B'):
+    for unit in ['','Ki','Mi','Gi','Ti','Pi','Ei','Zi']:
+        if abs(num) < 1024.0:
+            return "%3.1f%s%s" % (num, unit, suffix)
+        num /= 1024.0
+    return "%.1f%s%s" % (num, 'Yi', suffix)
+```
+
+### Collections 
+
+**check if list is a sub-set of another list**
+```python
+# http://stackoverflow.com/questions/16579085/python-verifying-if-one-list-is-a-subset-of-the-other
+set(l1) < set(l2)
+```
+
 ### Datetime
 
 

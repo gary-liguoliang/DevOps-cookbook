@@ -174,3 +174,14 @@ console.log(mc[1])
 ```csharp
 request.Headers.Add("Authorization", String.Concat("Basic ", (Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}:", {Your-PrivateKey}))))));
 ```
+
+## Apache HTTP Server
+
+## .htaccess redirect
+```
+RewriteEngine on
+RewriteBase /
+# redirect except /index.html
+RewriteCond %{REQUEST_URI} !^/index.html$
+RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
+```

@@ -167,3 +167,10 @@ console.log(mc[1])
 
 **Maximize editor:** `ctrl + shift + F12`
 
+## C#
+
+### HttpWebRequest with `HTTP Basic Auth`
+
+```csharp
+request.Headers.Add("Authorization", String.Concat("Basic ", (Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}:", {Your-PrivateKey}))))));
+```

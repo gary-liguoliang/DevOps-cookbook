@@ -54,6 +54,12 @@ def sizeof_fmt(num, suffix='B'):
     return "%.1f%s%s" % (num, 'Yi', suffix)
 ```
 
+**create folder recursively**
+
+```python
+os.makedirs(folder-path)
+```
+
 ### Collections 
 
 **check if list is a sub-set of another list**
@@ -185,3 +191,32 @@ RewriteBase /
 RewriteCond %{REQUEST_URI} !^/index.html$
 RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
 ```
+
+## Java
+
+### execute command line pipes with Runtime.exec()**
+
+```java
+    public static void main(String[] args) throws IOException {
+        Process exec = Runtime.getRuntime().exec("cmd /c ipconfig /all | find \"Host Name\"");
+
+        BufferedReader stdInput = new BufferedReader(new
+                InputStreamReader(exec.getInputStream()));
+
+        BufferedReader stdError = new BufferedReader(new
+                InputStreamReader(exec.getErrorStream()));
+
+        // read the output from the command
+        System.out.println("Here is the standard output of the command:\n");
+        String s = null;
+        while ((s = stdInput.readLine()) != null) {
+            System.out.println(s);
+        }
+
+        // read any errors from the attempted command
+        System.out.println("Here is the standard error of the command (if any):\n");
+        while ((s = stdError.readLine()) != null) {
+            System.out.println(s);
+        }
+    }
+    ```

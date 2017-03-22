@@ -345,3 +345,7 @@ RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
         }
     }
     ```
+    
+### Maven
+  
+skipTest:   `mvn install -DskipTests`

@@ -219,6 +219,15 @@ robocopy c:/tmp/sf c:/tmp/dest /MIR
 ```
 return code: `1` - `One of more files were copied successfully.` [robocopy return codes](https://blogs.technet.microsoft.com/deploymentguys/2008/06/16/robocopy-exit-codes/)
 
+**xcopy**
+```bat
+REM copy folder
+xcopy test test-copy2 /f /i /s /e
+
+REM copy file
+xcopy mar-18.md mar-18.md-copy*
+```
+
 
 ### Windows Service
 

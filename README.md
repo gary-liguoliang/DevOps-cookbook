@@ -328,7 +328,7 @@ RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
 
 ## Java
 
-### execute command line pipes with Runtime.exec()**
+### execute command line pipes with Runtime.exec()
 
 ```java
     public static void main(String[] args) throws IOException {
@@ -353,8 +353,19 @@ RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
             System.out.println(s);
         }
     }
-    ```
+```
     
 ### Maven
   
 skipTest:   `mvn install -DskipTests`
+
+
+
+## Git
+
+```bash
+# print commit log tree
+git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
+git lgb
+```
+[Output of git branch in tree like fashion](http://stackoverflow.com/questions/2421011/output-of-git-branch-in-tree-like-fashion)

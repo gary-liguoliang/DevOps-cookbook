@@ -228,6 +228,17 @@ REM copy file
 xcopy mar-18.md mar-18.md-copy*
 ```
 
+**symbolic link**
+```bat
+mklink /D ant apache-ant-1.10.1\
+symbolic link created for ant <<===>> apache-ant-1.10.1\
+```
+
+### Enviroment setup
+```bat
+setx PATH "C:\dev\tools\ant\bin;%PATH%"
+```
+
 
 ### Windows Service
 
@@ -359,7 +370,64 @@ RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
   
 skipTest:   `mvn install -DskipTests`
 
+### Ant
 
+**build.xml**
+```xml
+<project name="antExampleProject" default="test" basedir=".">
+<target name="test">
+    <tstamp/>
+    <echo message="today is: ${DSTAMP} - ${TSTAMP} - ${TODAY}" />
+
+
+    <!-- print all properies -->
+    <echoproperties />
+
+
+    <!-- export property to file -->
+    <echo file="host.file" append="false" message='url="github.com"' />
+
+
+    <!-- load property from file content -->
+    <loadresource property="host.file.content">
+        <file file="host.file"/>
+    </loadresource>
+    <echo>file content: ${host.file.content}</echo>
+
+
+    <!-- execute javascript: extrace value from String -->
+    <script language="javascript">
+        var s = project.getProperty('host.file.content')
+        s = s.substring(s.indexOf('=') + '='.length)
+        project.setProperty('host.value', s);
+    </script>
+    <echo message="host.value found via javascript: ${host.value}" />
+
+
+    <!-- repalce file content -->
+    <replaceregexp file="host.file"
+               match='url=\"(.+)\"'
+               replace="url.repalced=\1"
+               byline="true" />
+    <!-- display the file content after refex replace. -->
+    <loadresource property="host.replaced">
+        <file file="host.file"/>
+    </loadresource>
+    <echo message="host.replaced: ${host.replaced}" />
+
+
+    <!-- http get with basic authentication -->
+    <get src="https://api.github.com/user" 
+        dest="github-user-info.json" username="github-user-login" password="pwd"/>
+    <!-- set property from file content -->
+    <loadresource property="github.user.info">
+        <file file="github-user-info.json"/>
+    </loadresource>
+    <echo message="user info: ${github.user.info}" />
+
+</target>
+</project>
+```
 
 ## Git
 

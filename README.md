@@ -57,25 +57,13 @@ datetime.datetime(2016, 11, 28, 0, 0)
 
 ### I/O
 
-**Get the path of current python file**
+**file path**
 
 ```python
-    os.path.realpath(__file__)
-```
-
-**get folder path**
-
-```python
-    f = '/tmp/test/web/conf.xml'
-    print os.path.dirname(f) #/tmp/test/web
-```
-
-**get folder name**
-
-```python
-    f = '/tmp/test/web/conf.xml'
-    print os.path.basename(os.path.dirname(f)) # or
-    print os.path.dirname(f).split('/')[-1]  # 
+    f = r'c:\tmp\test.csv'
+    print 'canonical path:', os.path.realpath(__file__)   # c:\tmp\test.csv
+    print 'dirname: ', os.path.dirname(os.path.realpath(__file__))  # c:\tmp
+    print 'base name: ', os.path.basename(os.path.realpath(__file__))  # test.csv
 ```
 
 **for each file**
@@ -127,20 +115,17 @@ os.makedirs(folder-path)
 last_modified_on = datetime.datetime.fromtimestamp(os.path.getmtime(f))
 ```
 
-**reading / writing**
+**read/write file**
 
 ```python
-def get_email_list(email_file):
-    try:
-        with open(email_file) as f:
-            lines = f.read().splitlines()
-        return lines
-    except Exception:
-        return list()
+    with open(file_src) as f:
+        lines = f.readlines()
 
-def save_email_to_file(email):
-    with open('email_list_processed.txt', "a") as f2:
-        f2.write("%s\n" % email)
+    with open(file_src) as f:
+       content = f.read()
+
+    with open(file_dest, mode='w+') as f:
+        file_dest.write('content')
 ```
 
 ### Collections 
@@ -199,6 +184,15 @@ if __name__ == '__main__':
 
 ## Windows CMD
 
+### String
+
+**find string by keyword "OR"**
+```cmd
+ipconfig /all | findstr "IPv4 Host"
+```
+find by 'IPv4' or 'Host'
+
+
 ### Windows OS quick setup
 
 **auto start**
@@ -253,6 +247,21 @@ net stop <service>
 [*net start vs. sc start*](https://superuser.com/questions/315166/net-start-service-and-sc-start-what-is-the-difference)
 
 ### Windows Scheduler Job
+
+### Windows Process Port
+
+
+**find process id by port**
+```cmd
+netstat -aon | findstr "port1 port2"
+```
+find by port1 or port2
+
+
+**find process using port**
+```cmd
+tasklist /fi "pid eq process-id"
+```
 
 ### PsExec
 

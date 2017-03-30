@@ -128,6 +128,16 @@ last_modified_on = datetime.datetime.fromtimestamp(os.path.getmtime(f))
         file_dest.write('content')
 ```
 
+**read from url**
+```python
+def fetch_data(url, username, password):
+    request = urllib2.Request(url)
+    base64string = base64.b64encode('%s:%s' % (username, password))
+    request.add_header("Authorization", "Basic %s" % base64string)
+    response = urllib2.urlopen(request)
+    print response.read()
+```
+
 ### Collections 
 
 **map/dict**
@@ -440,9 +450,19 @@ skipTest:   `mvn install -DskipTests`
 
 ## Git
 
+**log tree**
 ```bash
 # print commit log tree
 git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 git lgb
 ```
 [Output of git branch in tree like fashion](http://stackoverflow.com/questions/2421011/output-of-git-branch-in-tree-like-fashion)
+**
+
+**revert changes on diverged local branch**
+```bash
+git checkout phobos
+git reset --hard origin/phobos
+```
+[Git: Discard all changes on a diverged local branch](http://stackoverflow.com/questions/2358643/git-discard-all-changes-on-a-diverged-local-branch)
+

@@ -202,6 +202,14 @@ ipconfig /all | findstr "IPv4 Host"
 ```
 find by 'IPv4' or 'Host'
 
+### for loop /  for each
+```cmd
+SET list=Windows, Linux, Mac
+
+FOR %%i in (%list%) do (
+    echo %%i
+)
+```
 
 ### Windows OS quick setup
 
@@ -276,7 +284,13 @@ tasklist /fi "pid eq process-id"
 ### PsExec
 
 ### HPC
+```cmd
+REM run cmd on all nodes
+clusrun /scheduler:<hpc-head-node> echo hello
 
+REM run cmd on selected nodes
+clusrun /nodes:<node-1>,<node-2> echo hello
+```
 
 
 ## Database

@@ -473,10 +473,31 @@ git lgb
 [Output of git branch in tree like fashion](http://stackoverflow.com/questions/2421011/output-of-git-branch-in-tree-like-fashion)
 **
 
-**revert changes on diverged local branch**
+
+**git log**
 ```bash
+#list the last 5 commits
+git log -p -5
+
+#show details
+git show <commit> --stat
+```
+
+**git reset / revert**
+```bash
+#Cleans the working tree by recursively removing files that are not under version control, starting from the current directory.
+git clean -fd
+
+# resets the index but not the working tree
+git reset (--mixed)
+
+# resets the index and working tree.
+git reset --hard
+
+# revert changes on diverged local branch
 git checkout phobos
 git reset --hard origin/phobos
+
 ```
 [Git: Discard all changes on a diverged local branch](http://stackoverflow.com/questions/2358643/git-discard-all-changes-on-a-diverged-local-branch)
 

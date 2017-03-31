@@ -247,7 +247,7 @@ setx PATH "C:\dev\tools\ant\bin;%PATH%"
 ### Windows Service
 
 ```bat
-sc \\<remote-server> <service>
+sc \\<remote-server> query <service>
 sc \\<remote-server> stop <service>
 sc \\<remote-server> start <service>
 

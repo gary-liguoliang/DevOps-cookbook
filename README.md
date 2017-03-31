@@ -158,6 +158,37 @@ for k, v in users.iteritems():
 {'a': 1, 'c': 3, 'b': 2}
 ```
 
+**map filter reduce**
+```python
+l = [1, 2, 3, 13, 12, 43, 7]
+
+# map
+>>> map(lambda i: i + 1, l)
+[2, 3, 4, 14, 13, 44, 8]
+
+# filter
+>>> filter(lambda i : i > 10, l)
+[13, 12, 43]
+
+# reduce
+>>> reduce(lambda i, j : i + j, l)
+81
+>>> f = lambda i, j: i if (i > j) else j
+>>> reduce(f, l)
+43
+```
+
+**List Comprehensions**
+```python
+l = [1, 2, 3, 13, 12, 43, 7]
+
+# for loop
+>>> [i for i in l if i > 10]
+[13, 12, 43]
+>>> [i+1 for i in l if i > 10]
+[14, 13, 44]
+```
+
 **check if list is a sub-set of another list**
 ```python
 # http://stackoverflow.com/questions/16579085/python-verifying-if-one-list-is-a-subset-of-the-other

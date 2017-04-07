@@ -532,3 +532,10 @@ git reset --hard origin/phobos
 ```
 [Git: Discard all changes on a diverged local branch](http://stackoverflow.com/questions/2358643/git-discard-all-changes-on-a-diverged-local-branch)
 
+**git ignore locally**
+
+```bash
+git update-index --skip-worktree project.iws
+git update-index --no-skip-worktree project.iws
+```
+[assume-unchanged-vs-skip-worktree](http://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree)

@@ -403,6 +403,11 @@ RewriteRule ^(.*)$ https://new-demo-website.com/side-projects/$1 [R=301,L]
 
 ## Java
 
+### String
+```java
+String.format("%s = %d", "port", 80);
+```
+
 ### execute command line pipes with Runtime.exec()
 
 ```java

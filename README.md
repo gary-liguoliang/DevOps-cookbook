@@ -340,18 +340,41 @@ clusrun /nodes:<node-1>,<node-2> echo hello
 
 
 
-## Bash
+## Unix/Linux
 
-### Linux 
+### System config
 ```bash
 # show user's groups
 groups <user-name>
 
 # add user to group
 sudo usermod -a -G <group-name> <user-name>
+```
 
-# log off
-logoff
+### crontab
+Ubuntu
+```bash
+# show all
+crontab -l
+
+# edit directly 
+crontab -e
+
+# set default editor
+export VISUAL=vi
+
+# run every minute
+* * * * * root date >> /tmp/test.log
+
+# check logs to verify 
+tail -100f /var/log/syslog | grep -i cron &
+```
+[Instead of adding a line to /etc/crontab, which Rusty knows is not a good idea, he might well add **a file** to the directory `/etc/cron.d` with the user name. This would not be affected by updates but is a well known location.](https://help.ubuntu.com/community/CronHowto)
+
+e.g. 
+```bash
+root@u1:/etc/cron.d# cat /etc/cron.d/test
+* * * * * root date >> /tmp/test.log
 ```
 
 ## Vim

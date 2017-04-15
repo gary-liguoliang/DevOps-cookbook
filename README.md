@@ -273,6 +273,7 @@ xcopy mar-18.md mar-18.md-copy*
 
 **symbolic link**
 ```bat
+mklink /D <link-name> <acutal-path>
 mklink /D ant apache-ant-1.10.1\
 symbolic link created for ant <<===>> apache-ant-1.10.1\
 ```
@@ -375,6 +376,12 @@ e.g.
 ```bash
 root@u1:/etc/cron.d# cat /etc/cron.d/test
 * * * * * root date >> /tmp/test.log
+```
+
+### symbolic
+```bash
+ln -s <actual-path> <link>
+ln -s /apps/github/public/web-latest web
 ```
 
 ## Vim

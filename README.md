@@ -50,6 +50,9 @@ datetime.datetime(2016, 11, 28, 0, 0)
 >> diff = datetime.datetime.now() - t1
 >> diff.days
 22 
+
+>>> previous_day = datetime.datetime.now() - datetime.timedelta(days=1)
+
 ```
 [python datetime format](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)
 [timedelta](https://docs.python.org/2/library/datetime.html#timedelta-objects)

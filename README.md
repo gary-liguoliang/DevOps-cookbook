@@ -565,6 +565,7 @@ git lgb
 **git log**
 ```bash
 #list the last 5 commits
+git log  --pretty=oneline -n 5
 git log -p -5
 
 #show details

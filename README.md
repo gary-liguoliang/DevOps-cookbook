@@ -353,6 +353,10 @@ groups <user-name>
 
 # add user to group
 sudo usermod -a -G <group-name> <user-name>
+
+# ubuntu set timezone
+timedatectl list-timezones
+sudo timedatectl set-timezone <timeszone>
 ```
 
 ### crontab

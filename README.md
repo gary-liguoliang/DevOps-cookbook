@@ -12,6 +12,15 @@ pip install pywinrm --proxy http://proxy.server:80 --trusted-host pypi.python.or
 
 ### String
 
+**lowercase/uppercase**
+```python
+s="abcDE"
+s.lower()  # 'abcde'
+s          # 'abcDE'
+s.upper()  # 'ABCDE'
+s          # 'abcDE'
+```
+
 **index**
 ```python
 s = 'github.com/guoliang-dev'
@@ -38,6 +47,13 @@ s.rjust(20, '-')  # '--------------github'
 s = 'cookbook'
 s.count('o') # 4
 s.count('o', 0, 2) # 1
+```
+
+**startswith/endswith**
+```python
+s = "https://hostname"
+s.startswith('http')  # True
+s.startswith('Http')  # False
 ```
 
 ### datetime

@@ -617,3 +617,9 @@ git update-index --skip-worktree project.iws
 git update-index --no-skip-worktree project.iws
 ```
 [assume-unchanged-vs-skip-worktree](http://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree)
+
+**git show remote url**
+
+```bash
+git config --get remote.origin.url
+```

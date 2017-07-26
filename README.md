@@ -297,11 +297,15 @@ mklink /D ant apache-ant-1.10.1\
 symbolic link created for ant <<===>> apache-ant-1.10.1\
 ```
 
-### Enviroment setup
+### Enviroment variable setup
 ```bat
 setx PATH "C:\dev\tools\ant\bin;%PATH%"
 ```
 
+### check folder exist
+```bat
+if not exist "C:\tmp" mkdir C:\tmp
+```
 
 ### Windows Service
 

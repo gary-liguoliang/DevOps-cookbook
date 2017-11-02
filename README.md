@@ -514,6 +514,48 @@ String.format("%s = %d", "port", 80);
 </build>
 ```
 
+**print properties**
+```
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <version>1.1</version>
+    <executions>
+        <execution>
+            <phase>compile</phase>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+                <tasks>
+                    <echo>Displaying value of 'testproperty' property</echo>
+                    <echo>[testproperty] ${testproperty}</echo>
+                </tasks>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
+**find dependency jar file path**
+```
+<properties>
+    <aspectj.lib>${org.aspectj:aspectjweaver:jar}</aspectj.lib>
+</properties>
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId>
+    <version>3.0.2</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>properties</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
 
 ### Ant
 

@@ -413,7 +413,15 @@ ln -s /apps/github/public/web-latest web
 
 ## Vim
 
-## Regular Expression
+## Regular Expression RegEx
+
+**Not contains / negative lookahead**
+
+```js
+# find all 'Windows' which does not contain '64'
+(?!.*64.*).*Windows.*
+```
+
 
 **Python**
 

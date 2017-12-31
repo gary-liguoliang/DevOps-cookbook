@@ -675,5 +675,17 @@ git update-index --no-skip-worktree project.iws
 **git show remote url**
 
 ```bash
-git config --get remote.origin.url
+# show remote url only
+git config --get remote.origin.url 
+
+# or:
+git remote -v
 ```
+
+**switch remote url**
+
+```bash
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+```
+[switching remote URL](https://help.github.com/articles/changing-a-remote-s-url/)
+

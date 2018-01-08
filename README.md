@@ -689,3 +689,13 @@ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
 ```
 [switching remote URL](https://help.github.com/articles/changing-a-remote-s-url/)
 
+**SSLVerify**
+
+```bash
+# clone with no ssl certifacte verify
+git -c http.sslVerify=false clone https://example.com/path/to/git
+
+# disable ssl verify
+git config http.sslVerify false # --global
+```
+

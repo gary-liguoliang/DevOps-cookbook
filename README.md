@@ -699,3 +699,11 @@ git -c http.sslVerify=false clone https://example.com/path/to/git
 git config http.sslVerify false # --global
 ```
 
+**undo/revert commmit**
+
+```bash
+# HEAD~1
+git reset HEAD~  # keep working tree (the state of your files on disk) unchanged, undo commit, keep local changes unstaged
+git reset --soft HEAD~ # keep working tree (the state of your files on disk) unchanged, undo commit, keep local changes staged
+```
+[How to undo the most recent commits in Git](https://stackoverflow.com/questions/927358/how-to-undo-the-most-recent-commits-in-git)

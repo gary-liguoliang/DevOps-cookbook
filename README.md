@@ -505,6 +505,11 @@ String.format("%s = %d", "port", 80);
 **skipTest**
 `mvn install -DskipTests`
 
+**show dependency tree**
+`mvn dependency:tree`
+[Resolving conflicts using the dependency tree](https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html)
+
+
 **set java source and target version**
 ```xml
 <build>

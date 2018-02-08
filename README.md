@@ -366,6 +366,12 @@ clusrun /nodes:<node-1>,<node-2> echo hello
 
 ## Unix/Linux
 
+**curl with proxy**
+```bash
+$ curl -x "http://proxy:8080" --get "https://google.com"
+```
+
+
 ### System config
 ```bash
 # show user's groups

@@ -352,7 +352,31 @@ clusrun /nodes:<node-1>,<node-2> echo hello
 
 ### SQL
 
-### H2
+### Oracle PL/SQL
+
+```sql
+-- setup new table
+CREATE TABLE ORDERS (
+  order_id         NUMBER,
+  attribute_name   VARCHAR2(32),
+  text_value       VARCHAR2(32),
+  number_value     NUMBER
+);
+
+-- insert
+INSERT INTO ORDERS VALUES (1, 'Currency', 'USD', NULL);
+INSERT INTO ORDERS VALUES (1, 'Country', 'US',  NULL);
+INSERT INTO ORDERS VALUES (1, 'Amount', NULL, 1000);
+
+-- select EAV with group by & CASE WHEN
+SELECT order_id
+  , MAX(CASE WHEN attribute_name = 'Currency' THEN text_value ELSE '' END) AS CurrencyCode
+  , MAX(CASE WHEN attribute_name = 'Country' THEN text_value ELSE '' END) AS CountryCode
+  , MAX(CASE WHEN attribute_name = 'Amount' THEN number_value ELSE NULL END) AS AmountV
+FROM ORDERS
+GROUP BY order_id
+```
+
 
 ### SQL Server / T-SQL
 

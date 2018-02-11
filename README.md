@@ -74,6 +74,15 @@ datetime.datetime(2016, 11, 28, 0, 0)
 [timedelta](https://docs.python.org/2/library/datetime.html#timedelta-objects)
 
 
+### float
+
+```python
+f = 10.0 / 3  # 3.3333333333333335
+round(f, 2)  # 3.33
+print '{0:.2f}'.format(f)  # 3.33
+```
+
+
 ### I/O
 
 **file path**

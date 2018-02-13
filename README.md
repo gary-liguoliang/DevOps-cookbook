@@ -24,11 +24,15 @@ s          # 'abcDE'
 **index**
 ```python
 s = 'github.com/guoliang-dev'
-s.index('g')  # 0 - firs index from left
-s.rindex('g')  # 18 - firt index from right
-s.index('g', s.index('g') + 1)  # 11 second index from left
+s.find('g')  # 0 - firs index from left, index() throws ValueError exception if the substring is not found
+s.rfind('g')  # 18 - firt index from right
+s.find('g', s.find('g') + 1)  # 11 second index from left
 
 # contains? 
+'python' in s
+# or
+s.find('python')
+# or
 try:
     s.index('python')
 except ValueError as e:

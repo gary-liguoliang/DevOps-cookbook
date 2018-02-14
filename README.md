@@ -227,6 +227,16 @@ l = [1, 2, 3, 13, 12, 43, 7]
 set(l1) < set(l2)
 ```
 
+**collections.OrderedDict**
+```python
+from collections import OrderedDict
+d = OrderedDict()
+d['a'] = 1
+d['b'] = 2
+for k, v in d.items()
+    print k, v 
+```
+
 ### XML
 ```python
 from lxml import etree

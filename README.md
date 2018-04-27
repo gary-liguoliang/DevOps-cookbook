@@ -755,6 +755,10 @@ git -c http.sslVerify=false clone https://example.com/path/to/git
 
 # disable ssl verify
 git config http.sslVerify false # --global
+
+# globally
+git config --global http.sslVerify false
+
 ```
 
 **undo/revert commmit**

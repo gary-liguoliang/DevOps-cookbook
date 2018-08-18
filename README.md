@@ -769,3 +769,16 @@ git reset HEAD~  # keep working tree (the state of your files on disk) unchanged
 git reset --soft HEAD~ # keep working tree (the state of your files on disk) unchanged, undo commit, keep local changes staged
 ```
 [How to undo the most recent commits in Git](https://stackoverflow.com/questions/927358/how-to-undo-the-most-recent-commits-in-git)
+
+
+## SSH
+
+**list, add ssh keys**
+
+```bash
+bash-3.2$ ssh-add -l
+4096 SHA256:i/xxx /Users/u/.ssh/github (RSA)
+
+bash-3.2$ ssh-add ~/.ssh/bitbucket
+Identity added: /Users/u/.ssh/bitbucket (/Users/u/.ssh/bitbucket)
+```

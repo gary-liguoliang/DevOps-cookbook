@@ -468,6 +468,27 @@ ln -s /apps/github/public/web-latest web
 
 ## Regular Expression RegEx
 
+**start and end of line**
+
+```
+^abc$
+```
+
+**digits and non-digits**
+
+```
+\d  -> digits
+\D  -> non digits
+```
+
+**repeat certain times**
+
+```
+r{n} -> n times
+r{n,} -> at least n times
+r{n, m} -> n-m times
+```
+
 **Not contains / negative lookahead**
 
 ```js

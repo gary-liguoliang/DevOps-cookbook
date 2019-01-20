@@ -481,6 +481,13 @@ ln -s /apps/github/public/web-latest web
 \D  -> non digits
 ```
 
+**word and non-word character**
+
+```
+\w -> A-Z, a-z, 0-9, _
+\W -> not in \w
+```
+
 **repeat certain times**
 
 ```

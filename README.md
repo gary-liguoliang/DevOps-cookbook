@@ -1,5 +1,13 @@
 # DevOps-cookbook
 
+## network
+
+```
+# monitor outgoing tcp traffic
+sudo tcpdump -vv -s0 tcp port 80
+```
+
+
 ## Python
 
 ### pip

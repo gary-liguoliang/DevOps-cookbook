@@ -3,8 +3,17 @@
 ## network
 
 ```
+# netcat listen to a port
+nc -kdl localhost 8000
+
+#curl upload file
+curl -vvv -F 'data=@/tmp/abc' http://localhost:8000/
+
 # monitor outgoing tcp traffic
-sudo tcpdump -vv -s0 tcp port 80
+sudo tcpdump -nnvvXS -s0 tcp port 80
+
+# monitor incoming tcp
+sudo tcpdump -vvnnX  -i any port 8000
 ```
 
 

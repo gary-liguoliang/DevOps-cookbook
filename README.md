@@ -827,3 +827,73 @@ bash-3.2$ ssh-add -l
 bash-3.2$ ssh-add ~/.ssh/bitbucket
 Identity added: /Users/u/.ssh/bitbucket (/Users/u/.ssh/bitbucket)
 ```
+
+## Ansible
+
+**use varialbes in playbook**
+
+```yaml
+---
+  
+- name: hello world
+  hosts: all
+  vars:
+    name: "guoliang"
+  tasks:
+    - name: print hello
+      debug:
+        msg: "hi {{name}}"
+```
+
+**override variables in runtime**
+
+```bash
+ansible-playbook -i hosts playbook.yaml --extra-vars "name=guoliang"
+```
+
+**define varibles in inventory**
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#defining-variables-in-inventory
+
+```ini
+[local]
+localhost ansible_connection=local user_name=name-defined-in-host
+
+[local:vars]
+user_name=name-defined-in-group
+
+[all:vars]
+user_name=default-name-defined-by-all
+```
+
+**use variables define in inventory with default value**
+
+```yaml
+- name: hello world
+  hosts: all
+  tasks:
+    - name: print hello
+      debug:
+        msg: "hi {{user_name}}"
+```
+
+ - `ansible-playbook -i hosts playbook.yaml` will print "hi name-defined-in-host"
+ - `ansible-playbook -i hosts playbook.yaml --extra-vars "user_name=name-defined-in-extra-vars"` will print "hi name-defined-in-extra-vars"
+ 
+ 
+variable priority: https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+
+**use variables define in inventory with default value**
+
+```yaml
+---
+  
+- name: hello world
+  hosts: all
+  vars:
+    name: "{{user_name | default('default name')}}"
+  tasks:
+    - name: print hello
+      debug:
+        msg: "hi {{name}}"
+```
